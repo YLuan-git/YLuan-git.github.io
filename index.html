@@ -1,122 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuanyuan Luan | Biostatistics</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 850px;
-      margin: auto;
-      padding: 2rem;
-      color: #333;
-    }
-    h1, h2 {
-      color: #004080;
-    }
-    a {
-      color: #004080;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            background: #047857;
+            padding: 0;
+            border-bottom: 3px solid #10b981;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: #10b981;
+            border-bottom-color: #059669;
+        }
+
+        .main-content {
+            display: flex;
+            min-height: calc(100vh - 140px);
+        }
+
+        .content-area {
+            flex: 2;
+            padding: 40px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: #ecf0f1;
+            padding: 40px 30px;
+            border-left: 1px solid #bdc3c7;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page h2 {
+            color: #047857;
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 10px;
+        }
+
+        .page h3 {
+            color: #065f46;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .page p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            color: #047857;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+
+        .contact-item strong {
+            color: #065f46;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .contact-item a {
+            color: #059669;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .research-item, .publication-item, .experience-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .research-item h4, .publication-item h4, .experience-item h4 {
+            color: #047857;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .publication-item {
+            border-left-color: #34d399;
+        }
+
+        .experience-item {
+            border-left-color: #6ee7b7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #10b981;
+        }
+
+        .skill-category h4 {
+            color: #047857;
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #065f46;
+        }
+
+        .skill-list li:before {
+            content: "▸ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .news-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #34d399;
+        }
+
+        .news-date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: #059669;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #bdc3c7;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .content-area, .sidebar {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Yuanyuan Luan, PhD</h1>
-    <p>Postdoctoral Fellow in Biostatistics<br>
-       Indiana University School of Public Health</p>
-    <p>Email: your.email@domain.com | 
-       <a href="https://orcid.org/">ORCID</a> | 
-       <a href="https://scholar.google.com/">Google Scholar</a> | 
-       <a href="https://github.com/">GitHub</a></p>
-  </header>
+    <div class="container">
+        <header class="header">
+            <h1>Your Name</h1>
+            <p>Your Title and Institution</p>
+        </header>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I am a postdoctoral fellow in Biostatistics at Indiana University, where my research 
-      focuses on developing statistical and computational methods for analyzing complex, 
-      high-dimensional biomedical data. My work addresses challenges such as 
-      measurement error, functional data, missingness, and the integration of wearable 
-      device and nutrition data. I aim to create scalable and interpretable tools that 
-      advance reproducibility, equity, and rigor in biomedical research. 
-    </p>
-  </div>
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link active" data-page="about">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-page="research">Research</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-page="publications">Publications</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-page="teaching">Teaching</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-page="experience">Experience</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
 
-  <div class="section">
-    <h2>Mission & Values</h2>
-    <p>
-      What drives me as a researcher is the belief that rigorous methods are essential 
-      to revealing the truth in data. My mission is to develop tools that not only 
-      improve the validity of biomedical findings but also make these tools 
-      accessible to the wider scientific and public health communities.  
-    </p>
-    <p>
-      Personally, I value persistence, collaboration, and curiosity. As the first in my 
-      family to pursue higher education, I understand the importance of resilience and 
-      mentorship. I strive to contribute to a more equitable scientific community by 
-      developing methods that address biases in data and by mentoring the next 
-      generation of statisticians and data scientists.  
-    </p>
-    <p>
-      Ultimately, I see my work as part of a broader effort to ensure that advances in 
-      data science and AI/ML lead to health solutions that are fair, reproducible, and 
-      impactful across diverse populations.  
-    </p>
-  </div>
+        <div class="main-content">
+            <main class="content-area">
+                <!-- About Page -->
+                <div id="about" class="page active">
+                    <h2>About Me</h2>
+                    <p>I am an [Your Position] in the [Department] at [Institution Name]. My research focuses on [your research area] with particular emphasis on [specific focus areas].</p>
+                    
+                    <p>I received a PhD in [Field] from [University] in [Year], where I was advised by <a href="#" class="highlight">[Advisor Name]</a>. Following that, I spent [duration] as a postdoctoral research fellow in the [Department] at [Institution] in <a href="#" class="highlight">[Supervisor's Name]</a>'s group.</p>
 
-  <div class="section">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Measurement error correction in functional and high-dimensional data</li>
-      <li>Bayesian and corrected-score methods</li>
-      <li>Functional data analysis and wearable device data</li>
-      <li>Applications in nutrition, obesity, and chronic disease epidemiology</li>
-      <li>AI/ML methods for biomedical data</li>
-    </ul>
-  </div>
+                    <p>My undergraduate degree was from <a href="#" class="highlight">[University]</a>, where I received a [Degree] in [Field].</p>
 
-  <div class="section">
-    <h2>Selected Publications</h2>
-    <p><strong>Luan Y</strong>, Zoh RS, Jadhav S, Xue L, Tekwe CD. 
-      Generalized functional linear regression models with mixed covariates measured with error. 
-      <em>arXiv preprint</em>, 2023.</p>
-    <p>Tekwe CD, Zhang M, Carroll RJ, <strong>Luan Y</strong>, Xue L, Zoh RS, Carter SJ, Allison DB, Geraci M. 
-      Estimation of sparse functional quantile regression with measurement error: a SIMEX approach. 
-      <em>Biostatistics</em>, 2022.</p>
-    <p>Jadhav S, Tekwe CD, <strong>Luan Y</strong>. 
-      A function-based approach to model the measurement error in wearable devices. 
-      <em>Statistics in Medicine</em>, 2022.</p>
-    <p>For a full list, see my <a href="https://scholar.google.com/">Google Scholar profile</a>.</p>
-  </div>
+                    <h3>Research Interests</h3>
+                    <p>I develop [methods/techniques] that help us understand [research problem]. I have worked with <a href="#" class="highlight">[Collaborator 1]</a>'s group on [project area], with <a href="#" class="highlight">[Collaborator 2]</a>'s group on [project area], and I currently work with [Current Collaborator] on [current project].</p>
 
-  <div class="section">
-    <h2>Teaching & Mentorship</h2>
-    <p>
-      I have served as a teaching assistant and co-instructor for graduate and undergraduate 
-      courses in biostatistics at Indiana University. I also mentor graduate students on 
-      statistical programming, manuscript development, and applied research projects. 
-    </p>
-  </div>
+                    <p>My husband, <a href="#" class="highlight">[Spouse Name]</a>, studies [spouse's research area].</p>
+                </div>
 
-  <div class="section">
-    <h2>Professional Service</h2>
-    <p>
-      Reviewer for <em>Statistics in Medicine</em> and <em>Biostatistics</em>.  
-      Active member of the American Statistical Association (ASA) and the International Biometric Society (ENAR).
-    </p>
-  </div>
+                <!-- Research Page -->
+                <div id="research" class="page">
+                    <h2>Research</h2>
+                    <p>My research focuses on developing innovative methods and approaches in [your field]. Below are some of my current and recent research projects:</p>
 
-  <footer>
-    <p>© 2025 Yuanyuan Luan</p>
-  </footer>
+                    <div class="research-item">
+                        <h4>Project Title 1</h4>
+                        <div class="date">2023 - Present</div>
+                        <p>Description of your current research project, methodologies used, and potential impact. Include collaborators and funding information if relevant.</p>
+                    </div>
+
+                    <div class="research-item">
+                        <h4>Project Title 2</h4>
+                        <div class="date">2021 - 2023</div>
+                        <p>Description of completed research project, key findings, and publications that resulted from this work.</p>
+                    </div>
+
+                    <div class="research-item">
+                        <h4>Project Title 3</h4>
+                        <div class="date">2019 - 2021</div>
+                        <p>Another research project description with outcomes and significance to the field.</p>
+                    </div>
+
+                    <h3>Research Methods & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Statistical Methods</h4>
+                            <ul class="skill-list">
+                                <li>Method 1</li>
+                                <li>Method 2</li>
+                                <li>Method 3</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <ul class="skill-list">
+                                <li>R</li>
+                                <li>Python</li>
+                                <li>MATLAB</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Software</h4>
+                            <ul class="skill-list">
+                                <li>Software 1</li>
+                                <li>Software 2</li>
+                                <li>Software 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications Page -->
+                <div id="publications" class="page">
+                    <h2>Publications</h2>
+                    
+                    <h3>Journal Articles</h3>
+                    <div class="publication-item">
+                        <h4>Paper Title (Year)</h4>
+                        <p><strong>Your Name</strong>, Co-author 1, Co-author 2. <em>Journal Name</em>, Volume(Issue), pages. <a href="#" class="highlight">DOI/Link</a></p>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>Another Paper Title (Year)</h4>
+                        <p>Co-author 1, <strong>Your Name</strong>, Co-author 2. <em>Journal Name</em>, Volume(Issue), pages. <a href="#" class="highlight">DOI/Link</a></p>
+                    </div>
+
+                    <h3>Conference Proceedings</h3>
+                    <div class="publication-item">
+                        <h4>Conference Paper Title (Year)</h4>
+                        <p><strong>Your Name</strong>, Co-author. <em>Conference Name</em>, Location. <a href="#" class="highlight">Link</a></p>
+                    </div>
+
+                    <h3>Preprints</h3>
+                    <div class="publication-item">
+                        <h4>Preprint Title (Year)</h4>
+                        <p><strong>Your Name</strong>, Co-authors. <em>arXiv preprint</em>. <a href="#" class="highlight">arXiv:XXXX.XXXXX</a></p>
+                    </div>
+                </div>
+
+                <!-- Teaching Page -->
+                <div id="teaching" class="page">
+                    <h2>Teaching</h2>
+                    
+                    <h3>Current Courses</h3>
+                    <div class="experience-item">
+                        <h4>Course Title (Course Number)</h4>
+                        <div class="date">Semester Year</div>
+                        <p>Description of the course, learning objectives, and your teaching approach. Include enrollment numbers and student feedback if relevant.</p>
+                    </div>
+
+                    <h3>Previous Courses</h3>
+                    <div class="experience-item">
+                        <h4>Previous Course Title</h4>
+                        <div class="date">Semester Year</div>
+                        <p>Course description and teaching experience details.</p>
+                    </div>
+
+                    <h3>Teaching Philosophy</h3>
+                    <p>Describe your approach to teaching, learning objectives, and how you engage students in your field of expertise.</p>
+
+                    <h3>Mentoring</h3>
+                    <p>Information about students you've mentored, both undergraduate and graduate level, and their achievements.</p>
+                </div>
+
+                <!-- Experience Page -->
+                <div id="experience" class="page">
+                    <h2>Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h4>Current Position Title</h4>
+                        <div class="date">Start Date - Present</div>
+                        <p><strong>Institution Name</strong></p>
+                        <p>Description of your current role, responsibilities, and key achievements.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h4>Previous Position</h4>
+                        <div class="date">Start Date - End Date</div>
+                        <p><strong>Institution Name</strong></p>
+                        <p>Description of previous role and accomplishments.</p>
+                    </div>
+
+                    <h3>Education</h3>
+                    <div class="experience-item">
+                        <h4>Ph.D. in [Field]</h4>
+                        <div class="date">Graduation Year</div>
+                        <p><strong>University Name</strong></p>
+                        <p>Dissertation: "[Dissertation Title]"<br>
+                        Advisor: [Advisor Name]</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <h4>Bachelor's/Master's Degree</h4>
+                        <div class="date">Graduation Year</div>
+                        <p><strong>University Name</strong></p>
+                        <p>Additional details about your undergraduate education.</p>
+                    </div>
+
+                    <h3>Awards & Honors</h3>
+                    <ul style="margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Award Name</strong> (Year) - Description</li>
+                        <li style="margin-bottom: 10px;"><strong>Fellowship Name</strong> (Year) - Description</li>
+                        <li style="margin-bottom: 10px;"><strong>Grant Name</strong> (Year) - Description</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Page -->
+                <div id="contact" class="page">
+                    <h2>Contact Information</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                        <div>
+                            <h3>Office Information</h3>
+                            <div class="contact-item">
+                                <strong>Office:</strong> Room Number, Building Name
+                            </div>
+                            <div class="contact-item">
+                                <strong>Phone:</strong> (555) 123-4567
+                            </div>
+                            <div class="contact-item">
+                                <strong>Email:</strong> <a href="mailto:your.email@university.edu">your.email@university.edu</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Address:</strong><br>
+                                Department Name<br>
+                                University Name<br>
+                                Street Address<br>
+                                City, State ZIP Code
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3>Office Hours</h3>
+                            <div class="contact-item">
+                                <strong>Fall 2024:</strong><br>
+                                Tuesdays: 2:00 PM - 4:00 PM<br>
+                                Thursdays: 10:00 AM - 12:00 PM<br>
+                                Or by appointment
+                            </div>
+                            
+                            <h3 style="margin-top: 30px;">Online Presence</h3>
+                            <div class="contact-item">
+                                <strong>ORCID:</strong> <a href="#">0000-0000-0000-0000</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Google Scholar:</strong> <a href="#">View Profile</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>ResearchGate:</strong> <a href="#">View Profile</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>LinkedIn:</strong> <a href="#">Connect</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <img src="https://via.placeholder.com/250x300/10b981/ffffff?text=Your+Photo" alt="Your Name" class="profile-image">
+                
+                <div class="contact-info">
+                    <h3>Quick Contact</h3>
+                    <div class="contact-item">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:your.email@university.edu">your.email@university.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Office:</strong><br>
+                        Room XXX, Building Name
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong><br>
+                        (555) 123-4567
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Recent News</h3>
+                    <div class="news-item">
+                        <div class="news-date">September 2024</div>
+                        <p>Started new research project on [topic]</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">August 2024</div>
+                        <p>Paper accepted at [Conference/Journal Name]</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">July 2024</div>
+                        <p>Presented research at [Conference Name]</p>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Links</h3>
+                    <div class="contact-item">
+                        <a href="#">Curriculum Vitae (PDF)</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="#">Google Scholar Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="#">ORCID Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="#">Department Page</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and pages
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    pages.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding page
+                    const targetPage = this.getAttribute('data-page');
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // Add smooth hover effects
+            const items = document.querySelectorAll('.research-item, .publication-item, .experience-item, .news-item');
+            items.forEach(item => {
+                item.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

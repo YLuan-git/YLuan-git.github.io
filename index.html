@@ -341,8 +341,8 @@
                 <li class="nav-item"><a href="#" class="nav-link active" data-page="about">About</a></li>
                <!--  <li class="nav-item"><a href="#" class="nav-link" data-page="research">Research</a></li> -->
                 <li class="nav-item"><a href="#" class="nav-link" data-page="publications">Publications</a></li>
+                 <li class="nav-item"><a href="#" class="nav-link" data-page="software">Software</a></li>
                 <li class="nav-item"><a href="#" class="nav-link" data-page="teaching">Teaching</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" data-page="software">Software</a></li>
                 <!--  <li class="nav-item"><a href="#" class="nav-link" data-page="experience">Experience</a></li> -->
                 <!-- <li class="nav-item"><a href="#" class="nav-link" data-page="contact">Contact</a></li>-->
             </ul>
@@ -433,16 +433,16 @@
                     <h3>Previous Courses</h3>
                     <div class="experience-item">
                         <h4>Longitudinal Data Analysis</h4>
+                        <div class="date">Fall 2022</div>
+                        <p><strong>Teaching Assistant</strong> - Indiana University, Bloomington</p>
+                        <p>Assisted with a graduate-level course on longitudinal data analysis methods. Responsibilities included leading discussion sections, grading assignments, and providing one-on-one student support.</p>
+                        </div>
+                    <div class="experience-item">
+                        <h4>Longitudinal Data Analysis</h4>
                         <div class="date">Fall 2023</div>
                         <p><strong>Co-instructor</strong> - Indiana University, Bloomington</p>
                         <p>Advanced statistical methods course focusing on the analysis of longitudinal and correlated data structures in biomedical and social science applications.</p>
                     </div>
-
-                    <div class="experience-item">
-                        <h4>Longitudinal Data Analysis</h4>
-                        <div class="date">Fall 2022</div>
-                        <p><strong>Teaching Assistant</strong> - Indiana University, Bloomington</p>
-                        <p>Assisted with a graduate-level course on longitudinal data analysis methods. Responsibilities included leading discussion sections, grading assignments, and providing one-on-one student support.</p>
                          <div class="experience-item">
                         <h4>Longitudinal Data Analysis</h4>
                         <div class="date">Fall 2024</div>
@@ -471,29 +471,62 @@
                     
                     <div class="software-item">
                         <div class="software-content">
-                            <h4>mpqDist</h4>
-                            <p><strong>MECfda</strong> is a package for bias correction due to measurement errors in functional and scalar covariates in scalar-on-function regression models.</p>
+                            <h4>MECfda: Scalar-on-Function Regression with Measurement Error Correction</h4>
+                            <p><strong>MECfda</strong> solves scalar-on-function linear models, including generalized linear mixed effect model and quantile linear regression model, and bias correction estimation methods due to measurement error.</p>
+                            
+                            <p>The package implements advanced statistical methods for handling measurement error in functional data analysis. Key features include:</p>
+                            <ul style="margin-top: 10px; padding-left: 30px;">
+                                <li style="margin-bottom: 8px;">Scalar-on-function linear regression models</li>
+                                <li style="margin-bottom: 8px;">Generalized linear mixed effect models</li>
+                                <li style="margin-bottom: 8px;">Quantile linear regression models</li>
+                                <li style="margin-bottom: 8px;">Bias correction methods for measurement error</li>
+                            </ul>
+                            
+                            <p>Details about the measurement error bias correction methods can be found in: Luan et al. (2023) <a href="https://doi.org/10.48550/arXiv.2305.12624" class="highlight">doi:10.48550/arXiv.2305.12624</a>, Tekwe et al. (2022) <a href="https://doi.org/10.1093/biostatistics/kxac017" class="highlight">doi:10.1093/biostatistics/kxac017</a>, Zhang et al. (2023) <a href="https://doi.org/10.5705/ss.202021.0246" class="highlight">doi:10.5705/ss.202021.0246</a>, Tekwe et al. (2019) <a href="https://doi.org/10.1002/sim.8179" class="highlight">doi:10.1002/sim.8179</a>.</p>
                             
                             <p>The package can be installed using</p>
                             <div class="code-block">install.packages("MECfda")</div>
                             
                             <div class="software-links">
-                                <a href="https://cran.r-project.org/web/packages/MECfda/index.html">GitHub</a>
-                               <!-- <a href="#">Paper</a> -->
-                                <a href="https://cran.r-project.org/web/packages/MECfda/index.html">Reference</a>
+                                <a href="https://cran.r-project.org/web/packages/MECfda/index.html">CRAN</a>
+                                <a href="https://cran.r-project.org/web/packages/MECfda/index.html">Documentation</a>
                             </div>
                         </div>
                         <div>
-                          <!--  <img src="https://via.placeholder.com/200x150/f0f9f4/047857?text=mpqDist+Plot" alt="mpqDist visualization" class="software-image"> -->
+                            <img src="https://via.placeholder.com/200x150/f0f9f4/047857?text=MECfda+Package" alt="MECfda package" class="software-image">
                         </div>
                     </div>
-
 
                     <h3>Software Under Development</h3>
                     <div class="software-item" style="grid-template-columns: 1fr;">
                         <div class="software-content">
                             <h4>QuantileSIMEX</h4>
-                            <p>QuantileSIMEX is an R package for quantile functional data analysis with measurement error using the SIMEX method.</p>
+                            <p><strong>QuantileSIMEX</strong> is an R package for quantile functional data analysis with measurement error using the SIMEX method. This package provides tools for correcting bias in functional quantile regression models when covariates are measured with error.</p>
+                            
+                            <p>Key features include:</p>
+                            <ul style="margin-top: 10px; padding-left: 30px;">
+                                <li style="margin-bottom: 8px;">SIMEX-based bias correction for functional quantile regression</li>
+                                <li style="margin-bottom: 8px;">Support for both functional and scalar error-prone covariates</li>
+                                <li style="margin-bottom: 8px;">Flexible quantile specification</li>
+                                <li style="margin-bottom: 8px;">Comprehensive simulation and diagnostic tools</li>
+                            </ul>
+                            
+                            <p style="margin-top: 15px;"><em>Package currently in development. Expected release: 2025</em></p>
+                        </div>
+                    </div>
+
+                    <h3>Other Statistical Software Contributions</h3>
+                    <div class="software-item" style="grid-template-columns: 1fr;">
+                        <div class="software-content">
+                            <h4>Measurement Error Correction Tools</h4>
+                            <p>Additional R packages and computational tools for implementing advanced measurement error correction methods in biostatistical applications. These tools focus on making sophisticated statistical methods accessible to applied researchers working with noisy, high-dimensional biomedical data.</p>
+                            
+                            <p>Development areas include:</p>
+                            <ul style="margin-top: 10px; padding-left: 30px;">
+                                <li style="margin-bottom: 8px;">Functional linear regression with mixed measurement errors</li>
+                                <li style="margin-bottom: 8px;">Bayesian approaches to scalar-on-function regression</li>
+                                <li style="margin-bottom: 8px;">Heteroscedastic measurement error models</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -611,80 +644,4 @@
                     </div>
                 </div>
 
-                <div class="contact-info">
-                    <h3>Recent News</h3>
-                    <div class="news-item">
-                        <div class="news-date">September 2024</div>
-                        <p>Started new research project on [topic]</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">August 2024</div>
-                        <p>Paper accepted at [Conference/Journal Name]</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">July 2024</div>
-                        <p>Presented research at [Conference Name]</p>
-                    </div>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Links</h3>
-                    <div class="contact-item">
-                        <a href="#">Curriculum Vitae (PDF)</a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="#">Google Scholar Profile</a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="#">ORCID Profile</a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="#">Department Page</a>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all links and pages
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    pages.forEach(p => p.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Show corresponding page
-                    const targetPage = this.getAttribute('data-page');
-                    document.getElementById(targetPage).classList.add('active');
-                    
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            });
-
-            // Add smooth hover effects
-            const items = document.querySelectorAll('.research-item, .publication-item, .experience-item, .news-item, .software-item');
-            items.forEach(item => {
-                item.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateX(5px)';
-                    this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
-                });
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
-                    this.style.boxShadow = 'none';
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                <div

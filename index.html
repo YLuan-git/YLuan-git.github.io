@@ -163,7 +163,7 @@
             text-decoration: underline;
         }
 
-        .research-item, .publication-item, .experience-item {
+        .research-item, .publication-item, .experience-item, .software-item {
             background: #f8f9fa;
             padding: 20px;
             margin-bottom: 20px;
@@ -171,7 +171,7 @@
             border-left: 4px solid #10b981;
         }
 
-        .research-item h4, .publication-item h4, .experience-item h4 {
+        .research-item h4, .publication-item h4, .experience-item h4, .software-item h4 {
             color: #047857;
             margin-bottom: 10px;
             font-size: 1.2em;
@@ -189,6 +189,59 @@
 
         .experience-item {
             border-left-color: #6ee7b7;
+        }
+
+        .software-item {
+            border-left-color: #059669;
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .software-content {
+            /* Content takes remaining space */
+        }
+
+        .software-image {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .software-links {
+            margin-top: 15px;
+        }
+
+        .software-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #059669;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border: 1px solid #059669;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .software-links a:hover {
+            background: #059669;
+            color: white;
+        }
+
+        .code-block {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #374151;
+            margin: 10px 0;
+            overflow-x: auto;
         }
 
         .skills-grid {
@@ -265,6 +318,15 @@
             .header h1 {
                 font-size: 2em;
             }
+
+            .software-item {
+                grid-template-columns: 1fr;
+            }
+
+            .software-image {
+                max-width: 100%;
+                justify-self: center;
+            }
         }
     </style>
 </head>
@@ -280,6 +342,7 @@
                <!--  <li class="nav-item"><a href="#" class="nav-link" data-page="research">Research</a></li> -->
                 <li class="nav-item"><a href="#" class="nav-link" data-page="publications">Publications</a></li>
                 <li class="nav-item"><a href="#" class="nav-link" data-page="teaching">Teaching</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-page="software">Software</a></li>
                 <!--  <li class="nav-item"><a href="#" class="nav-link" data-page="experience">Experience</a></li> -->
                 <!-- <li class="nav-item"><a href="#" class="nav-link" data-page="contact">Contact</a></li>-->
             </ul>
@@ -292,40 +355,67 @@
                     <h2>About Me</h2>
                     <p>As a biostatistician, I have broadened my work to combine statistical innovation, biomedical application, and computational implementation. </p>
                     
-                    <p>I received a PhD in Epidemiology with a focus on Biostatistics from Indiana University, where I was advised by <a href="#" class="highlight">[Dr. Carmen Tekwe]</a>. Following that, I spent two year as a postdoctoral research fellow in the School of Public Health  at Indiana University in <a href="#" class="highlight">[Dr. Carmen Tekwe and Dr. Roger Zoh]</a>'s group.</p>
+                    <p>I received a PhD in Epidemiology with a focus on Biostatistics from Indiana University, where I was advised by <a href="#" class="highlight">Dr. Carmen Tekwe</a>. Following that, I spent two year as a postdoctoral research fellow in the School of Public Health  at Indiana University in <a href="#" class="highlight">Dr. Carmen Tekwe and Dr. Roger Zoh</a>'s group.</p>
 
-                    <p>My undergraduate degree was from <a href="#" class="highlight">[University of Minnesota]</a>, where I received a Bachelor degree in Statistics.</p>
+                    <p>My undergraduate degree was from <a href="#" class="highlight">University of Minnesota</a>, where I received a Bachelor degree in Statistics.</p>
 
                    <!--  <h3>Research Interests</h3>
                     <p>My research investigates how to develop statistical methods that correct for bias and inefficiency in noisy, incomplete, and high-dimensional biomedical data. These challenges arise across wearable devices, electronic health records, and genomic platforms, where enormous potential is often limited by error and missingness. I have contributed new frameworks for measurement error correction in regression models, functional data analysis, and high-dimensional inference, with applications to nutrition, obesity, and physical activity research. I have extended this work by integrating statistical error correction with machine learning and deep learning approaches, creating scalable algorithms that remain rigorous yet practically applicable. My long-term goal is to build a research program that advances biostatistics at the interface of measurement error, functional data, and AI/ML, while training the next generation of scientists and collaborating broadly to improve reproducibility and equity in biomedical science.</p>
-
+                    -->
                 </div>
                     
                 <!-- Publications Page -->
                 <div id="publications" class="page">
                     <h2>Publications</h2>
                     
-                    <h3>Journal Articles</h3>
+                    <h3>Peer-Reviewed Manuscripts</h3>
                     <div class="publication-item">
-                        <h4>Paper Title (Year)</h4>
-                        <p><strong>Your Name</strong>, Co-author 1, Co-author 2. <em>Journal Name</em>, Volume(Issue), pages. <a href="#" class="highlight">DOI/Link</a></p>
+                        <p>Tekwe C.D., Lei, J., <strong>Luan, Y.</strong>, Li, X., Rezaei, R., Dahanayaka, S., Meininger, Bazer, F.W., Wu, G. (2019). Oral administration of alpha-ketoglutarate or interferon tau reduces adiposity in diet-induced obese rats. <em>Experimental Biology and Medicine</em>. 0: 1–8. DOI: <a href="https://doi.org/10.1177/1535370219865229" class="highlight">10.1177/1535370219865229</a>. [Highlight Article]</p>
                     </div>
 
                     <div class="publication-item">
-                        <h4>Another Paper Title (Year)</h4>
-                        <p>Co-author 1, <strong>Your Name</strong>, Co-author 2. <em>Journal Name</em>, Volume(Issue), pages. <a href="#" class="highlight">DOI/Link</a></p>
+                        <p>Jadhav S., Tekwe, C.D., <strong>Luan Y.</strong> (2022). A Function-Based Approach to Model the Measurement Error in Wearable Devices. <em>Statistics in Medicine</em>. In Press.</p>
                     </div>
 
-                    <h3>Conference Proceedings</h3>
                     <div class="publication-item">
-                        <h4>Conference Paper Title (Year)</h4>
-                        <p><strong>Your Name</strong>, Co-author. <em>Conference Name</em>, Location. <a href="#" class="highlight">Link</a></p>
+                        <p>Tekwe CD., Zhang ML., Carroll R.J., <strong>Luan Y.</strong>, Xue L., Zoh R.S., Carter S. J., Allison D.B. (2022). Estimation of sparse functional quantile regression with measurement error: A SIMEX approach. <em>Biostatistics</em>.</p>
                     </div>
 
-                    <h3>Preprints</h3>
                     <div class="publication-item">
-                        <h4>Preprint Title (Year)</h4>
-                        <p><strong>Your Name</strong>, Co-authors. <em>arXiv preprint</em>. <a href="#" class="highlight">arXiv:XXXX.XXXXX</a></p>
+                        <p>Kim H.K., <strong>Luan Y.</strong>, Zoh R.S., Wu G., Tekwe C.D. Application of parametric- and semiparametric-based approaches to analyzing energy expenditure data among Zucker diabetic fatty rats. <em>Front Biosci (Landmark Ed)</em>.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p>Huang, L., Teo, C. J. H., <strong>Luan Y.</strong>, Tekwe, C. D. (2023). Predicting Body Fat Percentage from Anthropometric Measurements in Asian Athletes. <em>Journal of Science in Sport and Exercise</em>, 1-10.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p>Tekwe CD., <strong>Luan Y.</strong>, Meininger, C., Bazer, F., Wu, G. (2023). Dietary supplementation with L-leucine reduces nitric-oxide synthesis by endothelial cells of rats. <em>Experimental Biology and Medicine</em>, 248(18), 1537-1549.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p>Zoh R.S., <strong>Luan Y.</strong>, Xue L., Allison D.B, Tekwe CD. (2024). A fully Bayesian semi-parametric scalar-on-function regression (SoFR) with measurement error using instrumental variables. <em>Statistics in Medicine</em>. In Press.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p>Chen X., Ji H., <strong>Luan Y.</strong>, Zoh R.S., Xue L., Jadhav S., Tekwe C.D. (2024). Adjusting for bias due to measurement error in functional quantile regression models with error-prone functional and scalar covariates. <em>Biostatistics & epidemiology</em>. 2024 Jan 2;8(1):e2405439.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p>Huo C., <strong>Luan Y.</strong>, Zoh R.S., Gletsu-Miller N., Carter S.J., Frey G., Lin H.C., Bidulescu A., Loy S.L., Abdalla M., Tekwe C.D. (2024). Adjusting for bias due to measurement error in functional quantile regression models with error-prone functional and scalar covariates. <em>Biostatistics & epidemiology</em>. 2024 Jan 2;8(1):e2405439.</p>
+                    </div>
+
+                    <h3>Submitted Manuscripts</h3>
+                    <div class="publication-item">
+                        <p><strong>Luan Y.</strong>, Zoh R.S., Xue L., Tekwe C.D. (2025). Generalized functional linear regression models with mixed measurement errors. Submitted.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p><strong>Luan, Y.</strong>, Zoh, R.S., Cui, E., Yu, X., Ji, H., Jadhav, S., Tekwe, C.D. (2025). Scalable regression calibration approaches to correcting measurement error in multi-level generalized functional linear regression models with heteroscedastic measurement errors. Submitted.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <p><strong>Luan, Y.</strong>, Zoh, R.S., Xue L., Tekwe, C.D. (2025). Corrected score approach to estimating the generalized functional linear regression models with mixed measurement errors. Submitted.</p>
                     </div>
                 </div>
 
@@ -335,23 +425,77 @@
                     
                     <h3>Current Courses</h3>
                     <div class="experience-item">
-                        <h4>Course Title (Course Number)</h4>
-                        <div class="date">Semester Year</div>
-                        <p>Description of the course, learning objectives, and your teaching approach. Include enrollment numbers and student feedback if relevant.</p>
+                    <h4>Longitudinal Data Analysis</h4>
+                        <div class="date">Fall 2025</div>
+                        <p><strong>Guest Speaker</strong> - Indiana University, Bloomington</p>
+                        <p>Advanced statistical methods course focusing on the analysis of longitudinal and correlated data structures in biomedical and social science applications.</p>
                     </div>
-
                     <h3>Previous Courses</h3>
                     <div class="experience-item">
-                        <h4>Previous Course Title</h4>
-                        <div class="date">Semester Year</div>
-                        <p>Course description and teaching experience details.</p>
+                        <h4>Longitudinal Data Analysis</h4>
+                        <div class="date">Fall 2023</div>
+                        <p><strong>Co-instructor</strong> - Indiana University, Bloomington</p>
+                        <p>Advanced statistical methods course focusing on the analysis of longitudinal and correlated data structures in biomedical and social science applications.</p>
                     </div>
 
+                    <div class="experience-item">
+                        <h4>Longitudinal Data Analysis</h4>
+                        <div class="date">Fall 2022</div>
+                        <p><strong>Teaching Assistant</strong> - Indiana University, Bloomington</p>
+                        <p>Assisted with a graduate-level course on longitudinal data analysis methods. Responsibilities included leading discussion sections, grading assignments, and providing one-on-one student support.</p>
+                         <div class="experience-item">
+                        <h4>Longitudinal Data Analysis</h4>
+                        <div class="date">Fall 2024</div>
+                        <p><strong>Co-instructor</strong> - Indiana University, Bloomington</p>
+                        <p>Advanced graduate-level course covering statistical methods for analyzing longitudinal and repeated measures data, including mixed-effects models, generalized estimating equations, and handling missing data patterns.</p>
+                    </div>
                     <h3>Teaching Philosophy</h3>
-                    <p>Describe your approach to teaching, learning objectives, and how you engage students in your field of expertise.</p>
+                    <p>My teaching approach emphasizes the practical application of statistical methods to real-world biomedical problems. I believe in making complex statistical concepts accessible through hands-on examples and encouraging students to think critically about data analysis challenges. I strive to create an inclusive learning environment where students feel comfortable asking questions and exploring statistical concepts deeply.</p>
 
-                    <h3>Mentoring</h3>
-                    <p>Information about students you've mentored, both undergraduate and graduate level, and their achievements.</p>
+                    <h3>Teaching Experience Progression</h3>
+                    <p>My teaching journey in Longitudinal Data Analysis demonstrates progressive responsibility and expertise development. Starting as a Teaching Assistant in Fall 2022, I advanced to Co-instructor roles in Fall 2023 and 2024, reflecting growing pedagogical skills and subject matter expertise in advanced biostatistical methods.</p>
+
+                    <h3>Areas of Teaching Expertise</h3>
+                    <ul style="margin-top: 15px; padding-left: 30px;">
+                        <li style="margin-bottom: 10px;">Longitudinal and repeated measures data analysis</li>
+                        <li style="margin-bottom: 10px;">Mixed-effects and hierarchical models</li>
+                        <li style="margin-bottom: 10px;">Measurement error correction methods</li>
+                        <li style="margin-bottom: 10px;">Functional data analysis techniques</li>
+                    </ul>
+                </div>
+
+                <!-- Software Page -->
+                <div id="software" class="page">
+                    <h2>Software</h2>
+                    <p>I develop R packages and software tools to support biostatistical research and make advanced methods accessible to the broader research community.</p>
+                    
+                    <div class="software-item">
+                        <div class="software-content">
+                            <h4>mpqDist</h4>
+                            <p><strong>MECfda</strong> is a package for bias correction due to measurement errors in functional and scalar covariates in scalar-on-function regression models.</p>
+                            
+                            <p>The package can be installed using</p>
+                            <div class="code-block">install.packages("MECfda")</div>
+                            
+                            <div class="software-links">
+                                <a href="https://cran.r-project.org/web/packages/MECfda/index.html">GitHub</a>
+                               <!-- <a href="#">Paper</a> -->
+                                <a href="https://cran.r-project.org/web/packages/MECfda/index.html">Reference</a>
+                            </div>
+                        </div>
+                        <div>
+                          <!--  <img src="https://via.placeholder.com/200x150/f0f9f4/047857?text=mpqDist+Plot" alt="mpqDist visualization" class="software-image"> -->
+                        </div>
+                    </div>
+
+
+                    <h3>Software Under Development</h3>
+                    <div class="software-item" style="grid-template-columns: 1fr;">
+                        <div class="software-content">
+                            <h4>QuantileSIMEX</h4>
+                            <p>QuantileSIMEX is an R package for quantile functional data analysis with measurement error using the SIMEX method.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Experience Page -->
@@ -528,7 +672,7 @@
             });
 
             // Add smooth hover effects
-            const items = document.querySelectorAll('.research-item, .publication-item, .experience-item, .news-item');
+            const items = document.querySelectorAll('.research-item, .publication-item, .experience-item, .news-item, .software-item');
             items.forEach(item => {
                 item.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
                 item.addEventListener('mouseenter', function() {
